@@ -40,9 +40,8 @@ ul li {
    color: #fff;
    position: relative;
    margin-right: 20px;
-  padding-bottom: 2px;
+   padding-bottom: 2px;
    text-transform: uppercase
-  
 }
 
 .logo{
@@ -62,25 +61,127 @@ ul li {
     margin-right: 50px;
 }
 
-/* .desktop-main-menu ul li a::after{
-    content: "";
+/* navbar hover and animations */
+/* .desktop-main-menu ul li a:hover{
+transition: ease-in-out all .4s;
+transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-bottom: 1px solid white;
+    transform-origin: right;
+} */
+.desktop-main-menu ul li a::after {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 1px;
     background: #fff;
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: right center;
 }
 
-.desktop-main-menu ul li a:hover::after{
+.desktop-main-menu ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.4s;
+}
 
-} */
+/* Background images */
+section{
+    position: relative;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-transform: uppercase;
 
-/* navbar hover and animations */
-.desktop-main-menu ul li a:hover{
-transition: ease-in-out all .4s;
-transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-bottom: 1px solid white;
-    transform-origin: right;
+}
+.section-inner{
+    position: absolute;
+    bottom: 200px;
+    left: 150px;
+    max-width: 560px;
+   
+}
+
+.section-inner h4{
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 300;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+.section-inner h2{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-in-out;
+    animation-fill-mode: both; 
+    /* stop from showing at the start so animation fill mode is used */
+}
+.section-inner a{
+    animation: fadeInUp 0.5s ease-in-out 0.4s;
+    animation-fill-mode: both;
+}
+
+
+.section-a{
+    background-image: url('../img/section-a.webp');
+}
+
+.btn{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    min-width: 130px;
+    padding: 15px 50px;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    overflow: hidden; 
+    z-index: 2;
+   
+    
+    /* we dont want the hover to come out of the container so overflow is hidden*/
+}
+
+.btn:hover span {
+    color: black;
+}
+
+.btn .hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: #000;
+    z-index: -1;
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+
+/* the translateY is necesary on the hover class and also its 100% to cover the entire y asxis of the btn 
+and the cubic bezier is necessary for a smooth transition
+*/
+}
+.btn:hover .hover{
+    transform: translateY(0);
+}
+
+
+/* Animations */
+/* opacity 0 is invisble and 1 is visible since we are coming from top to bottom  */
+@keyframes fadeInUp{
+    0%{
+opacity: 0;  
+transform: translateY(140px);
+    }
+    100%{
+opacity: 1;
+transform: translateY(0);
+    }
 }
