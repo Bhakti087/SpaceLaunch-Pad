@@ -255,3 +255,19 @@ transform: translateY(0);
         transform: translateY(0);
     }
 }
+
+/* Media Queries */
+
+@media(max-width:960px){
+    /* hide desktop menu */
+    .desktop-main-menu{
+        display: none;
+    }
+}
+
+@media(max-width:600px){
+.section-inner{
+    bottom: 75px;
+    left: 20px;
+}
+}
