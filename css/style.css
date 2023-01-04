@@ -129,19 +129,19 @@ section{
 .section-a{
     background-image: url('../img/section-a.webp');
 }
-.section-b {
+.section-b{
     background-image: url('../img/section-b.webp');
 }
-.section-c {
+.section-c{
     background-image: url('../img/section-c.webp');
 }
-.section-d {
+.section-d{
     background-image: url('../img/section-d.webp');
 }
-.section-e {
+.section-e{
     background-image: url('../img/section-e.webp');
 }
-.section-f {
+.section-f{
     background-image: url('../img/section-f.webp');
 }
 
@@ -193,7 +193,17 @@ and the cubic bezier is necessary for a smooth transition
     bottom: 50px;
     left:50%;
     transform: translateY(-50%);
-    animation: fadeBounce 5s infinite;
+    animation: fadeBounce 3s infinite;
+}
+
+/* footer */
+footer{
+    position: relative;
+    padding: 55px 0;
+
+}
+footer ul{
+    display: flex;
 }
 
 
